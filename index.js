@@ -39,7 +39,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/stream', function(req, res) {
-  request.get('http://127.0.0.1:8080/consume/first').pipe(resp)
+  request.get('http://127.0.0.1:8080/consume/first').pipe(res)
 })
 
 app.listen(app.get('port'), function() {

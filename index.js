@@ -3,7 +3,7 @@ var app = express()
 var request = require("request")
 var spawn = require("child_process").spawn
 
-var stream = spawn("java -jar stream-m/stream-m.jar stream-m/server.properties")
+var stream = spawn("java -jar ./stream-m/stream-m.jar ./stream-m/server.properties")
 
 stream.stdout.on('data', function (data) {
   console.log('stream stdout: ' + data);

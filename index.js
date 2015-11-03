@@ -3,7 +3,7 @@ var app = express()
 var request = require("request")
 var spawn = require("child_process").spawn
 
-var stream = spawn("java -jar ./stream-m/stream-m.jar ./stream-m/server.properties")
+var stream = spawn("java", ["-jar", "./stream-m/stream-m.jar", "./stream-m/server.properties"])
 
 stream.stdout.on('data', function (data) {
   console.log('stream stdout: ' + data);
@@ -18,7 +18,7 @@ stream.on('close', function (code) {
 });
 
 setTimeout(function() {
-  var ffmpeg = spawn("ffmpeg -f video4linux2 -s 320x240 -r 16 -i /dev/video0 -vcodec libvpx -vb 448k -f webm http://127.0.0.1:8080/publish/first?password=secret")
+  var ffmpeg = spawn("ffmpeg", ["-f", "video4linux2", "-s", "320x240", "-r", "16", "-i", "/dev/video0", "-vcodec", "libvpx", "-vb 448k", "-f", "webm", "http://127.0.0.1:8080/publish/first?password=secret"])
 
   ffmpeg.stdout.on('data', function (data) {
     console.log('ffmepg stdout: ' + data);

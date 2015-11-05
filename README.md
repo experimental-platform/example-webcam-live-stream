@@ -9,7 +9,7 @@
 
 ## Installation
 
-    git clone git@github.com:experimental-platform/example-nodejs-webcam-live-stream.git
-    cd example-nodejs-webcam-live-stream
-    git remote add platform ssh://dokku@your-box.local:8022/example-nodejs-webcam-live-stream
+    git clone git@github.com:experimental-platform/example-webcam-live-stream.git
+    cd example-webcam-live-stream
+    git remote add platform ssh://dokku@your-box.local:8022/example-webcam-live-stream
     git push platform master

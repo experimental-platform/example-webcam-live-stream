@@ -1,8 +1,15 @@
-# NodeJS "Hello World" Example for Experimental Platform
+# Webcam Live Stream Example for Experimental Platform
 
-## Usage
+[The node.js code](https://github.com/experimental-platform/example-webcam/blob/master/index.js) has only a few lines and is easy to understand. It uses [ffmpeg](https://www.ffmpeg.org/) and [ffserver](https://trac.ffmpeg.org/wiki/ffserver) to create a ``webm`` stream.
 
-    git clone git@github.com:experimental-platform/nodejs-hello-world.git
-    cd nodejs-hello-world
-    git remote add platform ssh://dokku@your-box.local:8022/nodejs-hello-world
+## Requirements
+
+* A machine that runs [Experimental Platform](https://github.com/experimental-platform/platform-configure-script)
+* An ordinary webcam, we used [this](http://www.amazon.com/Logitech-Webcam-Widescreen-Calling-Recording/dp/B004FHO5Y6/)
+
+## Installation
+
+    git clone git@github.com:experimental-platform/example-nodejs-webcam-live-stream.git
+    cd example-nodejs-webcam-live-stream
+    git remote add platform ssh://dokku@your-box.local:8022/example-nodejs-webcam-live-stream
     git push platform master

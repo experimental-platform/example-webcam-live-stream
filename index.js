@@ -7,6 +7,12 @@ var ffserver = spawn("ffserver", ["-f", "./ffserver.conf"]);
 
 setTimeout(function() {
   var ffmpeg = spawn("ffmpeg", ["-f", "video4linux2", "-s", "320x240", "-r", "16", "-i", "/dev/video0", "http://127.0.0.1:8080/feed1.ffm"])
+  ffmpeg.stdout.on("data", function(data) {
+    console.log(data)
+  });
+  ffmpeg.stderr.on("data", function(data) {
+    console.log(data)
+  });
 }, 10000);
 
 app.set('port', (process.env.PORT || 5000));
